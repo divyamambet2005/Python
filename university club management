@@ -1,0 +1,121 @@
+class Club:
+    def __init__(self, name):
+        self.name = name
+        self.members = []
+
+    def add_member(self, student):
+        self.members.append(student)
+
+    def remove_member(self, student):
+        if student in self.members:
+            self.members.remove(student)
+        else:
+            print(f"{student} is not a member of {self.name}")
+
+    def get_members(self):
+        return self.members
+
+class University:
+    def __init__(self):
+        self.clubs = []
+
+    def add_club(self, club):
+        self.clubs.append(club)
+
+    def remove_club(self, club):
+        if club in self.clubs:
+            self.clubs.remove(club)
+        else:
+            print(f"{club.name} is not in the university clubs")
+
+    def display_clubs(self):
+        for club in self.clubs:
+            print(f"Club: {club.name}, Members: {club.get_members()}")
+
+class Student:
+    def __init__(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+
+    def join_club(self, club):
+        club.add_member(self.name)
+
+    def leave_club(self, club):
+        club.remove_member(self.name)
+
+# Sample Usage
+university = University()
+
+club1 = Club("Chess Club")
+club2 = Club("Dance Club")
+
+university.add_club(club1)
+university.add_club(club2)
+
+student1 = Student("Alice", 1)
+student2 = Student("Bob", 2)
+
+student1.join_club(club1)
+student2.join_club(club2)
+
+university.display_clubs()class Club:
+    def __init__(self, name):
+        self.name = name
+        self.members = []
+
+    def add_member(self, student):
+        self.members.append(student)
+
+    def remove_member(self, student):
+        if student in self.members:
+            self.members.remove(student)
+        else:
+            print(f"{student} is not a member of {self.name}")
+
+    def get_members(self):
+        return self.members
+
+class University:
+    def __init__(self):
+        self.clubs = []
+
+    def add_club(self, club):
+        self.clubs.append(club)
+
+    def remove_club(self, club):
+        if club in self.clubs:
+            self.clubs.remove(club)
+        else:
+            print(f"{club.name} is not in the university clubs")
+
+    def display_clubs(self):
+        for club in self.clubs:
+            print(f"Club: {club.name}, Members: {club.get_members()}")
+
+class Student:
+    def __init__(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+
+    def join_club(self, club):
+        club.add_member(self.name)
+
+    def leave_club(self, club):
+        club.remove_member(self.name)
+
+# Sample Usage
+university = University()
+
+club1 = Club("Chess Club")
+club2 = Club("Dance Club")
+
+university.add_club(club1)
+university.add_club(club2)
+
+student1 = Student("Alice", 1)
+student2 = Student("Bob", 2)
+
+student1.join_club(club1)
+student2.join_club(club2)
+
+university.display_clubs()
